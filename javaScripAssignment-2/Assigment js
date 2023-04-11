@@ -1,0 +1,146 @@
+//////////////////////////////////    Q-1
+
+
+// function print (myf1) {
+//       return function (myf2) { 
+//         console.log(myf1 + myf2)
+//     }
+// }
+
+// let innerFunction = print(6);
+
+// innerFunction(24)
+
+
+/////////////////////////////////    Q-2
+
+
+// let cities = ["Karachi", "HY=yderabad","Lahore","Quetta"]; 
+
+
+// function myCity (cityArr, myCityName) {
+// if(cityArr.length === 0){
+//         return false;
+//     }
+//     if(cityArr[0] === myCityName){
+//         return true;
+//     }
+
+//     return myCity (cityArr.slice(1), myCityName)
+
+// }
+// let gotMycity = myCity(cities, "Karachi")
+// console.log(gotMycity);
+
+
+
+
+
+/////////////////////////////////    Q=3
+
+
+// function addNewParagraph (paragraphText){
+
+// let newParagraph = document.createElement("p");
+// let addparagraphText= document.createTextNode(paragraphText)
+//  newParagraph.appendChild(addparagraphText)
+
+// let div_1 = document.getElementById("div1");
+// div_1.appendChild(newParagraph);
+// }
+
+// addNewParagraph("THIS IS NEW PARAGRAPH lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque maxime quis aliquid architecto, atque veritatis. Magnam, ipsa. Nam impedit enim molestiae nostrum libero sapiente,")
+
+
+
+///////////////////////////////     Q=4
+
+
+// function addNewListItem (listItem){
+
+// let newli = document.createElement("li");
+// let newlistitem= document.createTextNode(listItem)
+//  newli.appendChild(newlistitem)
+
+// let ul_1 = document.getElementById("ul1");
+// ul_1.appendChild(newli);
+// }
+
+// addNewListItem("peshawar")
+
+/////////////////////////////////    Q=5
+
+// function colorChange (sel_ele, newColor){
+
+//     let newColorEle = document.querySelector(sel_ele).style.backgroundColor = newColor;
+//     return(newColorEle)
+// }
+
+// colorChange("h1", "pink")
+// colorChange("p", "yellow")
+
+
+/////////////////////////////////    Q=6
+
+
+// let std1 ={
+//     studentname : "sohaib",
+//     id : 1234,
+//     course : "javascript",
+//     mobilenumber : 9123456789,
+// }
+
+// function locStd  (lsName , objStor){
+    
+// let stringifyObj = JSON.stringify(objStor); 
+// localStorage.setItem(lsName, stringifyObj); 
+// }
+
+// locStd("Sohaib's Data",std1);  
+
+
+
+/////////////////////////////////    Q=7
+
+
+
+
+
+// function locStd  (lsName){
+    
+//     let convertboj = localStorage.getItem(lsName);
+//     console.log(JSON.parse(convertboj));
+//     }
+    
+//     locStd("Sohaib's Data");  
+    
+
+/////////////////////////////////    Q=8
+
+
+let personData = {
+    name : "Ali",
+    father : "muhammad",
+    cast: "khan",
+    color: "brown",
+}
+ 
+function personDetail (personData) {
+    for(let pName in personData){
+        localStorage.setItem(pName, personData[pName])
+    }
+
+    let personObj = {};
+    for(let keys = 0; keys<localStorage.length; keys++){
+        let keyName = localStorage.key(keys);
+        personObj[keyName] = localStorage.getItem(keyName)
+    }
+    return personObj;
+};
+
+let newObj = personDetail(personData);
+personDetail(personData);
+console.log(newObj);
+
+
+
